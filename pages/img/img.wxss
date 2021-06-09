@@ -1,1 +1,3 @@
-/* pages/img/img.wxss */
+view {
+  color: yellow;
+}

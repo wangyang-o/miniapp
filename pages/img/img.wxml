@@ -1,2 +1,11 @@
+<!--
+ * @Descripttion: 
+ * @Author: wy
+ * @Date: 2021年06月08日
+ * @LastEditTime: 2021年06月09日
+-->
 <!--pages/img/img.wxml-->
-<text>pages/img/img.wxml</text>
+<text>{{msg}}</text>
+<view>
+    rpx
+</view>
