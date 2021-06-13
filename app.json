@@ -22,17 +22,17 @@
 		"enablePullDownRefresh": true
 	},
 	"tabBar": {
-		"color": "black",
+		"color": "#000",
 		"selectedColor": "#F79F1F",
 		"list": [
 			{
-				"pagePath": "pages/category/index",
+				"pagePath": "pages/index/index",
 				"text": "首页",
 				"iconPath": "icon/index.png",
 				"selectedIconPath": "icon/index_ac.png"
 			},
 			{
-				"pagePath": "pages/index/index",
+				"pagePath": "pages/category/index",
 				"text": "分类",
 				"iconPath": "icon/sort.png",
 				"selectedIconPath": "icon/sort_ac.png"
