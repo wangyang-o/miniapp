@@ -2,7 +2,7 @@
  * @Descripttion:
  * @Author: wy
  * @Date: 2021年06月08日
- * @LastEditTime: 2021年06月09日
+ * @LastEditTime: 2021年06月10日
  */
 // pages/img/img.js
 Page({
@@ -12,7 +12,12 @@ Page({
 	data: {
 		msg: '这里是img页面',
 	},
-
+	getPhoneNumber(e) {
+		console.log(e);
+	},
+	bindgetuserinfo(e) {
+		console.log(e);
+	},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */

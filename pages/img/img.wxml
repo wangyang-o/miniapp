@@ -2,10 +2,10 @@
  * @Descripttion: 
  * @Author: wy
  * @Date: 2021年06月08日
- * @LastEditTime: 2021年06月09日
+ * @LastEditTime: 2021年06月10日
 -->
 <!--pages/img/img.wxml-->
-<text>{{msg}}</text>
-<view>
-    rpx
-</view>
+<!-- <text>{{msg}}</text> -->
+<button type="primary" size="small" open-type="getPhoneNumber"
+    bindgetphonenumber="getPhoneNumber">getPhoneNumber</button>
+<button type="warn" open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">bindgetuserinfo</button>
