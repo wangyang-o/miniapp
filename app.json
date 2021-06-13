@@ -1,48 +1,13 @@
 {
-	"pages": [
-		"pages/img/img",
-		"pages/index/index",
-		"pages/mine/mine",
-		"pages/search/search"
-	],
+	"pages": ["pages/index/index"],
 	"window": {
 		"backgroundTextStyle": "dark",
 		"navigationBarBackgroundColor": "#0094ff",
-		"navigationBarTitleText": "didi",
+		"navigationBarTitleText": "橙心优选",
 		"navigationBarTextStyle": "white",
 		"enablePullDownRefresh": true
 	},
-	"tabBar": {
-		"color": "#ecf0f1",
-		"selectedColor": "#8e44ad",
-    "backgroundColor": "#000000",
-		"list": [
-			{
-				"pagePath": "pages/index/index",
-				"text": "首页",
-				"iconPath": "icon/_home.png",
-				"selectedIconPath": "icon/home.png"
-			},
-			{
-				"pagePath": "pages/img/img",
-				"text": "图片",
-				"iconPath": "icon/_img.png",
-				"selectedIconPath": "icon/img.png"
-			},
-			{
-				"pagePath": "pages/mine/mine",
-				"text": "我的",
-				"iconPath": "icon/_my.png",
-				"selectedIconPath": "icon/my.png"
-			},
-			{
-				"pagePath": "pages/search/search",
-				"text": "搜索",
-				"iconPath": "icon/_search.png",
-				"selectedIconPath": "icon/search.png"
-			}
-		]
-	},
+	
 	"style": "v2",
 	"sitemapLocation": "sitemap.json"
 }
