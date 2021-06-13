@@ -6,5 +6,6 @@
 -->
 <!--index.wxml-->
 <view>
-
+    <text class="iconfont icon-gouwuchekong"></text>
+    <text class="iconfont icon-daishouhuo"></text>
 </view>
