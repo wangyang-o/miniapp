@@ -4,28 +4,49 @@
  * @Date: 2021年06月08日
  * @LastEditTime: 2021年06月13日
  */
+import { request } from '../../request/index';
 Page({
 	data: {
 		// 轮播图
 		swiperList: [],
+		// 导航菜单
+		categoryList: [],
+		// 楼层
+		floorList: [],
 	},
-	//options(Object)
-	onLoad: function (options) {
-		let reqTask = wx.request({
-			url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata',
-			data: {},
-			header: { 'content-type': 'application/json' },
-			method: 'GET',
-			dataType: 'json',
-			responseType: 'text',
-			success: (result) => {
-				this.setData({
-					swiperList:result.data.message,
-				});
-			},
-			fail: () => {},
-			complete: () => {},
+	async getSwiperListData() {
+		const swiper = await request({ url: '/home/swiperdata' });
+		const new_swiper = swiper.map((item) => ({
+			...item,
+			navigator_url: item.navigator_url.replace(/main/, 'index'),
+		}));
+		this.setData({ swiperList: new_swiper });
+	},
+	async getCategoryListData() {
+		const category = await request({ url: '/home/catitems' });
+		this.setData({ categoryList: category });
+	},
+	async getFloorListData() {
+		const floor = await request({ url: '/home/floordata' });
+		const new_floor = floor.map((item) => {
+			return {
+				...item,
+				product_list: item.product_list.map((item1) => {
+					return {
+						...item1,
+						navigator_url: item1.navigator_url.replace('?', '/index?'),
+					};
+				}),
+			};
 		});
+		this.setData({
+			floorList: new_floor,
+		});
+	},
+	onLoad: function (options) {
+		this.getSwiperListData();
+		this.getCategoryListData();
+		this.getFloorListData();
 	},
 	onReady: function () {},
 	onShow: function () {},
