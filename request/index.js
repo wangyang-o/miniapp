@@ -4,7 +4,7 @@ export const request = (params) => {
 	ajaxTimes++;
 	// 显示加载中效果
 	wx.showLoading({
-		title: '加载中，请稍后~',
+		title: '加载中~',
 		mask: true,
 	});
 	//定义公共的URL

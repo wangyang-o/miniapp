@@ -1,2 +1,22 @@
 <!--pages/goods_list/index.wxml-->
-<text>pages/goods_list/index.wxml</text>
+<search-input></search-input>
+<tabs titles="{{titles}}" bindtabItemChange="handleTabItemChange">
+    <block wx:if="{{titles[0].isActive===true}}">
+        <navigator wx:for="{{goodsList}}" wx:key="goods_id"
+            url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}">
+            <view class="goods_image">
+                <image mode="widthFix"
+                    src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}" />
+            </view>
+            <view class="goods_info">
+                <view class="info_name">{{item.goods_name}}</view>
+                <view class="info_price">¥{{item.goods_price}}</view>
+            </view>
+        </navigator>
+    </block>
+    <block wx:if="{{titles[1].isActive===true}}">1</block>
+    <block wx:if="{{titles[2].isActive===true}}">2</block>
+</tabs>
+<view>
+
+</view>
