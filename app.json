@@ -12,12 +12,13 @@
 		"pages/feedback/index",
 		"pages/login/index",
 		"pages/auth/index",
-		"pages/pay/cart"
+		"pages/pay/index"
+
 	],
 	"window": {
 		"backgroundTextStyle": "dark",
 		"navigationBarBackgroundColor": "#F79F1F",
-		"navigationBarTitleText": "橙心优选",
+		"navigationBarTitleText": "W-Y优选",
 		"navigationBarTextStyle": "white",
 		"enablePullDownRefresh": true
 	},

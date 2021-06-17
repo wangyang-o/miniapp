@@ -1,5 +1,11 @@
 // pages/cart/index.js
-import { getSetting, chooseAddress, openSetting, showModal, showToast } from "../../utils/asyncWx.js";
+import {
+	getSetting,
+	chooseAddress,
+	openSetting,
+	showModal,
+	showToast,
+} from '../../utils/asyncWx.js';
 Page({
 	/**
 	 * 页面的初始数据
@@ -34,6 +40,72 @@ Page({
 			console.log(err);
 		}
 	},
+	//更新购物车数据
+	setCart(cart) {
+		let totalPrice = 0;
+		let totalNum = 0;
+		let allChecked = true;
+		cart.forEach((v) => {
+			if (v.checked) {
+				totalPrice += v.num * v.goods_price;
+				totalNum += v.num;
+			} else {
+				allChecked = false;
+			}
+		});
+		allChecked = cart.length ? allChecked : false;
+		this.setData({
+			cart,
+			allChecked,
+			totalPrice,
+			totalNum,
+		});
+		wx.setStorageSync('cart', cart);
+	},
+	 //商品选择状态改变
+	 handleItemChange(e) {
+        const { id } = e.currentTarget.dataset;
+        const { cart } = this.data;
+        const index = cart.findIndex(v => v.goods_id === id);
+        cart[index].checked = !cart[index].checked;
+        this.setCart(cart)
+    },
+    // 全选按钮改变
+    handleItemAllChange() {
+        const { allChecked, cart } = this.data;
+        cart.forEach(v => v.checked = !allChecked);
+        this.setCart(cart)
+    },
+    //数量改变
+    async numChange(e) {
+        const { id, opration } = e.currentTarget.dataset;
+        const { cart } = this.data;
+        const index = cart.findIndex(v => v.goods_id === id);
+        if (cart[index].num === 1 && opration === -1) {
+            const res = await showModal('是否删除商品')
+            if (res.confirm) {
+                cart.splice(index, 1);
+                this.setCart(cart)
+                return
+            }
+        }
+        cart[index].num += opration
+        this.setCart(cart)
+    },
+    //结算
+    async allPlay() {
+        const { totalNum, address } = this.data;
+        if (!address.userName) {
+            await showToast('未填联系方式')
+        } else if (totalNum === 0) {
+            await showToast('未选择商品')
+        } else {
+            wx.navigateTo({
+                url: '/pages/pay/index',
+            })
+        }
+
+    },
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
@@ -55,7 +127,7 @@ Page({
 		});
 		//购物车接收
 		const cart = wx.getStorageSync('cart') || [];
-		// this.setCart(cart);
+		this.setCart(cart);
 	},
 
 	/**
