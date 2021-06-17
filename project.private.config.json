@@ -13,8 +13,8 @@
     "miniprogram": {
       "list": [
         {
-          "name": "购物车",
-          "pathName": "pages/cart/index",
+          "name": "pages/pay/index",
+          "pathName": "pages/pay/index",
           "query": "",
           "scene": null
         }

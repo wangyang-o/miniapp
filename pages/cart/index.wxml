@@ -29,7 +29,7 @@
                 </view>
                 <!-- 图片 -->
                 <navigator class="cart_img_wrap">
-                    <image src="{{item.pics[0].pics_sma_url}}" mode="widthFix" />
+                    <image src="{{item.pics[0].pics_sma_url?item.pics[0].pics_sma_url:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}" mode="widthFix" />
                 </navigator>
                 <!-- 信息 -->
                 <view class="cart_info_wrap">
