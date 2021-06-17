@@ -1,2 +1,18 @@
-<!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<!-- 收货地址添加 -->
+<view class="revise_address_row">
+    <!-- 收货按钮 -->
+    <view class="address_btn" wx:if="{{!address.cityName}}">
+
+        <button type="primary" plain bindtap="addressChoose">
+            <text class="iconfont icon-tianjiadizhi" style="color: #e67e22;font-size: 40rpx;"></text>
+            获取收货地址</button>
+    </view>
+    <!-- 收货地显示 -->
+    <view class="user_info" wx:else>
+        <view class="info">
+            <view class="info_name">{{address.userName}}</view>
+            <view class="info_address">{{address.all}}</view>
+        </view>
+        <view class="phone">{{address.telNumber}}</view>
+    </view>
+</view>

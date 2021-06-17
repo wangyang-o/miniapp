@@ -1,1 +1,21 @@
-/* pages/cart/index.wxss */
+.revise_address_row {
+  padding: 30rpx;
+}
+.revise_address_row .address_btn button {
+  width: 50%;
+}
+.revise_address_row .user_info {
+  display: flex;
+  padding: 20rp;
+}
+.revise_address_row .user_info .info {
+  flex: 6;
+}
+.revise_address_row .user_info .info .info_address {
+  font-size: 30rpx;
+  color: #888;
+}
+.revise_address_row .user_info .info .phone {
+  flex: 3;
+  text-align: right;
+}

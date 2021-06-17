@@ -35,7 +35,7 @@
     <view>分享</view>
     <button open-type="share" class="contact"/>
   </view>
-  <navigator url="/pages/cart/cart" class="tool-item" open-type="switchTab">
+  <navigator url="/pages/cart/index" class="tool-item" open-type="switchTab">
     <text class="iconfont icon-gouwuchekong" style="color: red;" />
     <view>购物车</view>
   </navigator>

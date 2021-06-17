@@ -3,6 +3,5 @@
 		"search-input": "../../components/search-input/search-input",
 		"tabs": "../../components/tabs/tabs"
 	},
-
 	"navigationBarTitleText": "商品列表"
 }
